@@ -1,0 +1,12 @@
+name: Test an action
+
+on: workflow_dispatch
+jobs:
+  echo-sth:
+    needs: greeting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: goiPP/echo@master
+        with:
+          devhose_test_flag: true
+          gh_token: secret

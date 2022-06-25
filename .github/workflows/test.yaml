@@ -8,3 +8,13 @@ jobs:
       - uses: goiPP/echo@master
         with:
           gh_token: secret
+  list-emojis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'list emojis'
+        shell: bash
+        run: |
+          curl -v \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/emojis

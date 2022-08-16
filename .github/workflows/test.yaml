@@ -11,10 +11,14 @@ jobs:
   list-emojis:
     runs-on: ubuntu-latest
     steps:
-      - name: 'list emojis'
-        shell: bash
-        run: |
-          curl -v \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/emojis
+      - name: 'Testing Ruby'
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+#       - name: 'list emojis'
+#         shell: bash
+#         run: |
+#           curl -v \
+#             -H "Accept: application/vnd.github.v3+json" \
+#             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+#             https://api.github.com/emojis

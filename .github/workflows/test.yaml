@@ -2,19 +2,22 @@ name: Test an action
 
 on: workflow_dispatch
 jobs:
-  echo-sth:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: goiPP/echo@master
-        with:
-          gh_token: secret
-  list-emojis:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Testing Ruby'
-        uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7'
+#   echo-sth:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: goiPP/echo@master
+#         with:
+#           gh_token: secret
+#   list-emojis:
+#     runs-on: ubuntu-latest
+#     steps:
+
 #       - name: 'list emojis'
 #         shell: bash
 #         run: |

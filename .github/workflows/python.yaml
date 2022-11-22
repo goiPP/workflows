@@ -8,10 +8,6 @@ jobs:
         run: |
           mv "${{ runner.tool_cache }}" "${{ runner.tool_cache }}.old"
           mkdir -p "${{ runner.tool_cache }}"
-      - name: Setup Node 10
-        uses: actions/setup-node@v3
-        with:
-          node-version: 10.x
       - name: setup-pythons1
         uses: actions/setup-python@v4
         with:

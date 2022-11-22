@@ -12,13 +12,26 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 10.x
-      - name: setup-pythons
-        strategy:
-          matrix:
-            version: [ '3.6', '3.7', '3.8', '3.9', '3.10' ]
+      - name: setup-pythons1
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.version }}
+          python-version: '3.6'
+      - name: setup-pythons2
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.7'
+      - name: setup-pythons3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      - name: setup-pythons4
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: setup-pythons5
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       - name: Archive tool cache
         run: |
           cd "${{ runner.tool_cache }}"
